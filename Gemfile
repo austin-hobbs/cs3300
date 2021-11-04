@@ -7,6 +7,9 @@ ruby '2.7.0'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
 
+# rspec gem
+gem 'mini_racer'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -44,6 +47,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
