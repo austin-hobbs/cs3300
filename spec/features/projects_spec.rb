@@ -1,9 +1,19 @@
 
 require 'rails_helper'
 
+def login_user(user)
+  
+  sign_in user
+end
+
 RSpec.feature "Projects", type: :feature do
+
+  
+
   context "Create new project" do
+    let(:user) { FactoryBot.create(:user) }
     before(:each) do
+      login_user(user)
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
@@ -25,8 +35,10 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Update project" do
+    let(:user) { FactoryBot.create(:user) }
     let(:project) { Project.create(title: "Test title", description: "Test content", category: "some category", purpose: "some purpose") }
     before(:each) do
+      login_user(user)
       visit edit_project_path(project)
     end
 
@@ -50,7 +62,11 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Remove existing project" do
+    let(:user) { FactoryBot.create(:user) }
     let!(:project) { Project.create(title: "Test title", description: "Test content", category: "some category", purpose: "some purpose") }
+    before(:each) do
+      login_user(user)
+    end
     scenario "remove project" do
       visit projects_path
       click_link "Destroy"

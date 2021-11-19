@@ -7,6 +7,12 @@ ruby '2.7.0'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
 
+# devise gem
+gem 'devise'
+
+# factorybot gem
+gem 'factory_bot_rails'
+
 # rspec gem
 gem 'mini_racer'
 
