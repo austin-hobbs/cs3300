@@ -1,25 +1,55 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="container pt-75">
+  <div class="container p-3 w-100 mx-auto">
+    <% unless notice.nil? %>
+      <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
+    <% unless alert.nil? %>
+      <div class="alert alert-warning alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
+    <h1 class="display-3"><%= @project.title %></h1>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <div class="row">
+    
+    <div class="col-sm-8 pb-5 px-0">
+    
+      <p class="container border shadow-sm mh-75 overflow-auto pt-2">
+        <%= @project.description %>
+      </p>
+      
+    </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
+    <div class="col-sm-4">
+      
+      <div class = "card shadow-sm">
+        <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
+        <div class="card-body"><strong>Category:</strong>
+          <%= @project.category %>
+        </div>
+        <div class="card-body pt-0"><strong>Purpose:</strong>
+          <%= @project.purpose %>
+        </div>
+        <div class="card-body pt-0"><strong>Created:</strong>
+          <%= @project.created_at.strftime("%D") %>
+        </div>
+        <div class="card-body pt-0"><strong>Last updated:</strong>
+          <%= @project.updated_at.strftime("%D") %>
+        </div>
+      </div>
 
-<p>
-  <strong>Purpose:</strong>
-  <%= @project.purpose %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+      <div class="pt-3 px-4" style="width:100%">
+        <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block", type: "submit", role: "button" %>
+        <%= link_to "Back", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
+       </div>
+    </div>
+    
+  </div>  
+</div>
