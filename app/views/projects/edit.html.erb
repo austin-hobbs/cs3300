@@ -1,6 +1,10 @@
-<h1>Editing Project</h1>
+<div class="container px-1">
+    <div class="alert alert-warning">
 
+        <h5 class="text-center">Editing a project</h5>
+    </div>
+</div>
+<div style="width:400px; margin:auto;">
+    <%= link_to 'Delete Project', @project, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn bg-danger btn-block text-white", role:"button" %>
+</div>
 <%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>

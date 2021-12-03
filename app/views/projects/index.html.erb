@@ -51,19 +51,7 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="">
     <div class="container">
-      <% unless notice.nil? %>
-        <div class="alert alert-info alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= notice %>
-        </div>
-      <% end %>
-    
-      <% unless alert.nil? %>
-        <div class="alert alert-warning alert-dismissible">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= notice %>
-        </div>
-      <% end %>
+     
       <h1 class="display-3 pt-3">Projects</h1>
       <p class="pb-3">Welcome to my projects website. Below is a list of all the current projects!</p>
       <% if user_signed_in? %>
@@ -79,8 +67,8 @@
       <% @projects.each do |project| %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm", style="height:300px">
-            <h4 class="card-header bg-secondary text-white", style="height:80px", role="button" %>
-              <%= link_to project.title, project, class:"text-white" %>
+            <h4 class="card-header bg-secondary text-white", style="height:80px; transform: rotate(0);", role="button" %>
+              <%= link_to project.title, project, class:"text-white stretched-link" %>
             </h4>
             <div class="card-body">
               <div class="d-flex container overflow-hidden text-dark text-decoration-none align-middle", style="height:75%">
@@ -88,7 +76,6 @@
               </div>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group pt-3">
-                  <!-- <p><%= link_to 'View', project, class: "btn btn-sm btn-outline-secondary", role: "button" %> -->
                   <% if user_signed_in? %>
                     <p><%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-outline-secondary", role: "button" %>
                   <% end %>

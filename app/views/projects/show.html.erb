@@ -2,26 +2,14 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="container pt-75">
   <div class="container p-3 w-100 mx-auto">
-    <% unless notice.nil? %>
-      <div class="alert alert-info alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= notice %>
-      </div>
-    <% end %>
-    <% unless alert.nil? %>
-      <div class="alert alert-warning alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= notice %>
-      </div>
-    <% end %>
     <h1 class="display-3"><%= @project.title %></h1>
   </div>
 
   <div class="row">
     
-    <div class="col-sm-8 pb-5 px-0">
+    <div class="col-sm-8 pb-5 px-0", style="height:1000px;">
     
-      <p class="container border shadow-sm mh-75 overflow-auto pt-2">
+      <p class="container border shadow-sm mh-75 pt-2">
         <%= @project.description %>
       </p>
       
@@ -46,7 +34,9 @@
       </div>
 
       <div class="pt-3 px-4" style="width:100%">
-        <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block", type: "submit", role: "button" %>
+        <% if user_signed_in? %>
+          <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block", type: "submit", role: "button" %>
+        <% end %>
         <%= link_to "Back", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
        </div>
     </div>
