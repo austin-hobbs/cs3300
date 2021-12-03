@@ -16,6 +16,12 @@ gem 'factory_bot_rails'
 # rspec gem
 gem 'mini_racer'
 
+# bootstrap gem
+gem 'bootstrap', '~>4.6.1'
+
+#JavaScript gem
+gem 'jquery-rails'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

@@ -5,28 +5,46 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <p class="alert"><%= alert %></p>
-    <% if false %>
-    <p class="notice"><%= notice %></p>
-    # ^ not needed since below handles notices. Also %if false% block is a comment here.
-    <% end %>
-
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-
+  
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark shadow-sm">
+      <a class="navbar-brand" href="#">Projects</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+
+        </ul>
+        <div>
+      
+        <% if user_signed_in? %>
+          <%= link_to " Logout", destroy_user_session_path, class: "btn btn-outline-secondary navbar-brand", method: :delete, role: "button"%>
+        <% else %>
+          <%= link_to " Sign Up", new_user_registration_path, class: "btn btn-primary navbar-brand", type: "submit", role: "button" %>
+          <%= link_to " Login", new_user_session_path, class: "btn btn-outline-primary navbar-brand", type: "submit", role: "button"%>
+        <% end %>
+      </div>
+    </div>
+    
+  </nav>
   </head>
 
-  
+
 
   <body>
     <%= yield %>
   </body>
+  
+  <footer class="footer mt-auto py-3 fixed-bottom bg-light">
+    <div class="container">
+      <span class="text-muted">&copy; Austin Hobbs, 2021</span>
+    </div>
+  </footer>
 </html>
