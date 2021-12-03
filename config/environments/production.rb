@@ -23,7 +23,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Devise
-  config.action_mailer.default_url_options = { host: 'https://nameless-reaches-92544.herokuapp.com', port: 3000 }
+  #config.action_mailer.default_url_options = { host: 'https://nameless-reaches-92544.herokuapp.com'}
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
