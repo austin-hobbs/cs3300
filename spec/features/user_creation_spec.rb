@@ -1,11 +1,11 @@
 # spec/features/visitor_signs_up_spec.rb
 require 'rails_helper'
 RSpec.feature "Users", type: :feature do
-    #context "Create new user" do
+    # context "Create new user" do
     
     #    scenario "should be successful" do
     #        visit('/')
-    #        click_link('Sign up')
+    #        find(text: 'Sign Up', visible:'false').click
     #        within("form") do
     #            fill_in "Email", with: "test@example.com"
     #            fill_in "Password", with: "password123"
@@ -18,13 +18,13 @@ RSpec.feature "Users", type: :feature do
     
     #    scenario "should fail" do
     #        visit('/')
-    #        click_link('Sign up')
+    #        click_link('Sign Up')
     #        within("form") do
     #            fill_in "Email", with: "test@example.com"
-    #            click_button('Sign up')
+    #            click_button('Sign Up')
     #        end
-    #        expect(page).to have_content("1 error prohibited this user from being saved:")
+    #        expect(page).to have_content("Failure: 1 error prohibited this.")
     #    end
-    #end
+    # end
     
 end

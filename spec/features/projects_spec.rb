@@ -41,24 +41,24 @@ RSpec.feature "Projects", type: :feature do
   #     visit edit_project_path(project)
   #   end
 
-    #scenario "should be successful" do
-    #  within("form") do
-    #    fill_in "Description", with: "New description content"
-    #    fill_in "Category", with: "New Test category"
-    #    fill_in "Purpose", with: "New Test purpose"
-    #  end
-    #  click_button "Update Project"
-    #  expect(page).to have_content("Project was successfully updated")
-    # end
+  #   scenario "should be successful" do
+  #    within("form") do
+  #      fill_in "Description", with: "New description content"
+  #      fill_in "Category", with: "New Test category"
+  #      fill_in "Purpose", with: "New Test purpose"
+  #    end
+  #    click_button "Update Project"
+  #    expect(page).to have_content("Project was successfully updated")
+  #   end
 
-    #scenario "should fail" do
-    #  within("form") do
-    #    fill_in "Description", with: ""
-    #  end
-    #  click_button "Update Project"
-    #  expect(page).to have_content("Description can't be blank")
-    #end
-  #end
+  #   scenario "should fail" do
+  #    within("form") do
+  #      fill_in "Description", with: ""
+  #    end
+  #    click_button "Update Project"
+  #    expect(page).to have_content("Description can't be blank")
+  #   end
+  # end
 
   # context "Remove existing project" do
   #   let(:user) { FactoryBot.create(:user) }
@@ -66,12 +66,12 @@ RSpec.feature "Projects", type: :feature do
   #   before(:each) do
   #     login_user(user)
   #   end
-    #scenario "remove project" do
-    #  visit projects_path
-    #  click_link "Destroy"
-    #  expect(page).to have_content("Project was successfully destroyed")
-    #  expect(Project.count).to eq(0)
-  #end
+  #   scenario "remove project" do
+  #    visit projects_path
+  #    click_link "Destroy"
+  #    expect(page).to have_content("Project was successfully destroyed")
+  #    expect(Project.count).to eq(0)
+  # end
   # end
 end
 

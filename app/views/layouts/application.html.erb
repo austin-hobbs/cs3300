@@ -25,11 +25,11 @@
         <div>
       
         <% if user_signed_in? %>
-          <%= link_to " Account", edit_user_registration_path, class: "btn btn-outline-secondary navbar-brand", type: "submit", role: "button"%>
-          <%= link_to " Logout", destroy_user_session_path, class: "btn btn-outline-secondary navbar-brand", method: :delete, role: "button"%>
+          <%= link_to "Account", edit_user_registration_path, class: "btn btn-outline-secondary navbar-brand", type: "submit", role: "button"%>
+          <%= link_to "Logout", destroy_user_session_path, class: "btn btn-outline-secondary navbar-brand", method: :delete, role: "button"%>
         <% else %>
-          <%= link_to " Sign Up", new_user_registration_path, class: "btn btn-primary navbar-brand", type: "submit", role: "button" %>
-          <%= link_to " Login", new_user_session_path, class: "btn btn-outline-primary navbar-brand", type: "submit", role: "button"%>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary navbar-brand", type: "submit", role: "button", id:"sign-up-button"%>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary navbar-brand", type: "submit", role: "button", id:"login-button"%>
         <% end %>
       </div>
    
