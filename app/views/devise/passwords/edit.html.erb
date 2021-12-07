@@ -1,25 +1,43 @@
-<h2>Change your password</h2>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+
+  <div class="container px-1">
+    <div class="alert alert-warning">
+      <h5 class="text-center">Changing password</h5>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+  <div class="card container shadow-sm px-0 d-flex", style="max-width:500px">
+    
+    <div class="card-header text-center"><h5><strong>Current User:</strong></h5></div>
+    
+    <div class="card-body">
+      <div class="field input-group pr-5", style="justify-content:right;">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Password: </span>
+        </div> 
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="field input-group pr-5", style="justify-content:right;">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Password Confirm: </span>
+        </div> 
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
 
-<%= render "devise/shared/links" %>
+    
+    <div class="container pt-5 pb-4 justify-content-center">
+      <%= f.submit "Change Password", class: 'btn btn-primary btn-block '%>
+      <%= link_to "Cancel", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
+      <%= render "devise/shared/links" %>
+    </div>
+    
+<%end%>
+
+

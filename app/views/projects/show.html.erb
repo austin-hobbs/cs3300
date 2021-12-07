@@ -1,45 +1,67 @@
-
-<!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="container pt-75">
   <div class="container p-3 w-100 mx-auto">
     <h1 class="display-3"><%= @project.title %></h1>
   </div>
-
-  <div class="row">
-    
-    <div class="col-sm-8 pb-5 px-0", style="height:1000px;">
-    
-      <p class="container border shadow-sm mh-75 pt-2">
-        <%= @project.description %>
-      </p>
+  <div class="container-fluid main_container d-flex">
+    <div class="row flex-fill">
       
-    </div>
-
-    <div class="col-sm-4">
+      <div class="col-sm-8 flex-fill">
       
-      <div class = "card shadow-sm">
-        <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
-        <div class="card-body"><strong>Category:</strong>
-          <%= @project.category %>
+        <div class="container mh-75 pt-2 overflow-auto">
+          <%= @project.description %>
         </div>
-        <div class="card-body pt-0"><strong>Purpose:</strong>
-          <%= @project.purpose %>
-        </div>
-        <div class="card-body pt-0"><strong>Created:</strong>
-          <%= @project.created_at.strftime("%D") %>
-        </div>
-        <div class="card-body pt-0"><strong>Last updated:</strong>
-          <%= @project.updated_at.strftime("%D") %>
-        </div>
+        
       </div>
 
-      <div class="pt-3 px-4" style="width:100%">
-        <% if user_signed_in? %>
-          <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block", type: "submit", role: "button" %>
-        <% end %>
-        <%= link_to "Back", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
-       </div>
-    </div>
-    
-  </div>  
+      <div class="col-sm-4">
+        
+        <div class = "card shadow-sm d-block d-sm-none", style="margin-bottom: 150px">
+          <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
+          <div class="card-body"><strong>Category:</strong>
+            <%= @project.category %>
+          </div>
+          <div class="card-body pt-0"><strong>Purpose:</strong>
+            <%= @project.purpose %>
+          </div>
+          <div class="card-body pt-0"><strong>Created:</strong>
+            <%= @project.created_at.strftime("%D") %>
+          </div>
+          <div class="card-body pt-0"><strong>Last updated:</strong>
+            <%= @project.updated_at.strftime("%D") %>
+          </div>
+        </div>
+        <div class = "card shadow-sm d-none d-sm-block">
+          <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
+          <div class="card-body"><strong>Category:</strong>
+            <%= @project.category %>
+          </div>
+          <div class="card-body pt-0"><strong>Purpose:</strong>
+            <%= @project.purpose %>
+          </div>
+          <div class="card-body pt-0"><strong>Created:</strong>
+            <%= @project.created_at.strftime("%D") %>
+          </div>
+          <div class="card-body pt-0"><strong>Last updated:</strong>
+            <%= @project.updated_at.strftime("%D") %>
+          </div>
+        </div>
+      
+
+        <div class="pt-3 px-4 pb-5 d-none d-sm-block", style="width:100%">
+          <% if user_signed_in? %>
+            <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block navbar-btn", type: "submit", role: "button" %>
+          <% end %>
+          <%= link_to "Back", projects_path, class: "btn btn-outline-primary btn-block navbar-btn", type: "submit", role: "button"%>
+          
+        </div>
+
+        <div class="d-block d-sm-none fixed-bottom pb-5 mx-auto bg-white", style="width: 75%;">
+          <% if user_signed_in? %>
+            <%= link_to "Edit ", edit_project_path(@project), class: "btn btn-primary btn-block", type: "submit", role: "button" %>
+          <% end %>
+          <%= link_to "Back", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
+        </div>
+      </div>
+    </div>  
+  </div>
 </div>
