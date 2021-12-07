@@ -4,10 +4,8 @@
   <% if project.errors.any? %>
     <div id="error_explanation", class="px-5">
     <div class="alert alert-danger px-2">
-
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
     </div>
-      
       <ul>
         <% project.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -23,7 +21,7 @@
 
       <div class="input-group-prepend">
         <span class="input-group-text">Title</span>
-         </div>   
+         </div>
         <%= form.text_field :title, class: 'form-control'%>
         
     </div>
@@ -31,12 +29,8 @@
 
   <div class="row">
     
-    <div class="col-sm-8 pb-5 px-0">
-    
-      <%= form.text_area :description, class: 'form-control d-none d-sm-block', rows:"37" %>
-      <%= form.text_area :description, class: 'form-control d-block d-sm-none', rows:"20" %>
-
-      
+    <div class="col-sm-8 pb-5 px-0 d-none d-sm-block">
+      <%= form.text_area :description, class: 'form-control', rows:"37" %>      
     </div>
 
     <div class="col-sm-4">
@@ -51,15 +45,7 @@
         </div>
       </div>
 
-      <div class = "card shadow-sm fixed-bottom d-block d-sm-none", style="margin-bottom: 150px">
-        <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
-        <div class="card-body"><strong>Category:</strong>
-          <%= form.text_field :category, class:'form-control' %>
-        </div>
-        <div class="card-body pt-0"><strong>Purpose:</strong>
-          <%= form.text_field :purpose, class:'form-control' %>
-        </div>
-      </div>
+    
 
       <div class="pt-3 px-4 pb-5 d-none d-sm-block", style="width:100%">
           <%= form.submit :Done, class: 'btn btn-success btn-block' %>
@@ -67,10 +53,7 @@
           
         </div>
 
-        <div class="d-block d-sm-none fixed-bottom pb-5 mx-auto bg-white", style="width: 75%;">
-          <%= form.submit :Done, class: 'btn btn-success btn-block' %>
-          <%= link_to "Cancel", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
-        </div>
+       
     </div>
     
   </div>  
