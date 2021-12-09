@@ -36,15 +36,15 @@
     </nav>
   <div class="container pt-2">
     <% unless notice.nil? %>
-      <div class="alert alert-info alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <div class="alert alert-info alert-dismissible visible", id="noticeMsg">
+        <button type="button" class="close" data-dismiss="alert", id="notice">&times;</button>
         <%= notice %>
       </div>
     <% end %>
 
     <% unless alert.nil? %>
-      <div class="alert alert-warning alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <div class="alert alert-warning alert-dismissible visible", id="alertMsg">
+        <button type="button" class="close" data-dismiss="alert", id="alert">&times;</button>
         <%= alert %>
       </div>
     <% end %>

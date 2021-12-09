@@ -19,18 +19,17 @@
   <div class="container p-3 w-100 mx-auto">
     <div class="field input-group">
 
-      <div class="input-group-prepend">
+      <div class="input-group-prepend" id="title">
         <span class="input-group-text">Title</span>
          </div>
-        <%= form.text_field :title, class: 'form-control'%>
-        
+        <%= form.text_field :title, class: 'form-control', id:"title_field"%>  
     </div>
   </div>
 
   <div class="row">
     
     <div class="col-sm-8 pb-5 px-0 d-none d-sm-block">
-      <%= form.text_area :description, class: 'form-control', rows:"37" %>      
+      <%= form.text_area :description, class: 'form-control', rows:"37", id:"desc_field" %>      
     </div>
 
     <div class="col-sm-4">
@@ -38,17 +37,17 @@
       <div class = "card shadow-sm d-none d-sm-block">
         <div class="card-header"><h5><strong>Project Information:</strong></h5></div>
         <div class="card-body"><strong>Category:</strong>
-          <%= form.text_field :category, class:'form-control' %>
+          <%= form.text_field :category, class:'form-control', id:"cat_field" %>
         </div>
         <div class="card-body pt-0"><strong>Purpose:</strong>
-          <%= form.text_field :purpose, class:'form-control' %>
+          <%= form.text_field :purpose, class:'form-control', id:"pur_field" %>
         </div>
       </div>
 
     
 
       <div class="pt-3 px-4 pb-5 d-none d-sm-block", style="width:100%">
-          <%= form.submit :Done, class: 'btn btn-success btn-block' %>
+          <%= form.submit :Done, class: 'btn btn-success btn-block', id:"done_button" %>
           <%= link_to "Cancel", projects_path, class: "btn btn-outline-primary btn-block", type: "submit", role: "button"%>
           
         </div>

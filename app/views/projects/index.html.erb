@@ -59,8 +59,6 @@
       <% end %>
     </div>
   </div>
-
-
   <div class="album py-5">
     <div class="container">
       <div class="row">
@@ -107,7 +105,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <p><%= link_to 'View', project, class: "btn btn-sm btn-outline-secondary", role: "button" %>
-                <p><%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-outline-secondary", role: "button" %>
+                <p><%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-outline-secondary", role: "button", id:"edit_project" %>
               </div>
               <small class="text-muted"><%=project.updated_at.strftime("%D") %></small>
             </div>
