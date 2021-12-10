@@ -1,3 +1,5 @@
+
+
 <div class="container pt-75">
   <div class="container p-3 w-100 mx-auto">
     <h1 class="display-3"><%= @project.title %></h1>
@@ -8,7 +10,8 @@
       <div class="col-sm-8 flex-fill">
       
         <div class="container mh-75 pt-2 overflow-auto">
-          <%= @project.description %>
+          
+          <%= markdown(@project.description) %>
         </div>
         
       </div>
