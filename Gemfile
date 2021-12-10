@@ -22,6 +22,8 @@ gem 'bootstrap', '~>4.6.1'
 #JavaScript gem
 gem 'jquery-rails'
 
+gem "non-stupid-digest-assets"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
